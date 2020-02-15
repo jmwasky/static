@@ -12,7 +12,7 @@ pipeline {
     }
 	stage('Tidy lint HTML.') {
       steps {
-        tidy -q -e *.html
+        sh 'tidy -q -e *.html'
       }
     }
     stage('Upload to AWS 2') {
