@@ -10,7 +10,7 @@ pipeline {
         '''
       }
     }
-    stage('Upload to AWS') {
+    stage('Upload to AWS 2') {
       steps {
         withAWS(endpointUrl:'https://udacity.jenkins.prot3.isaac.com',credentials:'aws-static') {
               s3Upload(pathStyleAccessEnabled:true, payloadSigningEnabled: true, file:’index.html’, bucket:’jinkens-proj03’)
