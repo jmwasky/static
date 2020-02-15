@@ -10,10 +10,15 @@ pipeline {
         '''
       }
     }
+	stage('Tidy lint HTML.') {
+      steps {
+        tidy -q -e *.html
+      }
+    }
     stage('Upload to AWS 2') {
       steps {
         withAWS(credentials:'aws-static') {
-              s3Upload(pathStyleAccessEnabled:true, payloadSigningEnabled: true, file:'index.html', bucket:'jinkens-proj03')
+            s3Upload(pathStyleAccessEnabled:true, payloadSigningEnabled: true, file:'index.html', bucket:'jinkens-proj03')
         }
       }
     }
