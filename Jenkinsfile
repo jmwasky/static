@@ -9,15 +9,11 @@ pipeline {
           ls -lah
         '''
       }
-    }
-    stage('Upload to AWS') {
-      steps {
+	  steps {
         withAWS(endpointUrl:'https://udacity.jenkins.prot3.isaac.com',credentials:'AKIAZP3K6ZDZAY3AZPC7') {
               s3Upload(pathStyleAccessEnabled:true, payloadSigningEnabled: true, file:’index.html’, bucket:’jinkens-proj03’)
         }
       }
-      
     }
-    
   }
 }
