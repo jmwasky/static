@@ -10,9 +10,8 @@ pipeline {
         '''
       }
     }
-	stage('Cope file to /var/jenkins_home/shsnc-worksplace') {
+    stage('Cope file to /var/jenkins_home/shsnc-worksplace') {
       steps {
-        sh 'echo "cope file:index.html"'
         cp index.html /var/jenkins_home/shsnc-worksplace
       }
     }  
