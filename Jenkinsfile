@@ -12,7 +12,7 @@ pipeline {
     }
     stage('Cope file to /var/jenkins_home/shsnc-worksplace') {
       steps {
-        cp index.html /var/jenkins_home/shsnc-worksplace
+        sh 'cp index.html /var/jenkins_home/shsnc-worksplace'
       }
     }  
   }  
