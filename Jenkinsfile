@@ -3,7 +3,6 @@ pipeline {
   environment {
 	TEST = 'test1'
   }
-  
   stages {
     stage('Hello World') {
       steps {
